@@ -1,13 +1,17 @@
-<div>
-  <div class="l-container">
-    <% @posts.each do |post| %>
-    <ul>
-      <li><%= post.title %></li>
-      <li><%= post.body %></li>
-    </ul>
-  
-  
-<% end %>
+
+<% @posts.in_groups_of(4, false) do |group| %>
+  <div class="grid-container">
+    <% group.each do |post| %>
+      <div class="grid-3 l-grid-3 card">
+        <div class="card-header">
+          <%= link_to post.title, post_path(post) %><br>
+        </div>
+        <div class="card-body">
+          <%= truncate(post.body, length: 125) %><%= link_to "Lees meer", post_path(post) %>
+        </div>
+      </div>
+    <% end %>
   </div>
-</div>
+<% end %>
+
 
