@@ -22,6 +22,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+gem 'devise'
 gem 'figaro'
 
 gem 'capistrano', '~> 3.3.5'
@@ -47,6 +49,6 @@ group :development, :test do
 end
 
 group :production do 
-  gem 'passenger'
+  gem 'passenger', '~> 5.0.14'
 end
 
