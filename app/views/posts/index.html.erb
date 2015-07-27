@@ -1,5 +1,7 @@
-<h1>Alle berichten</h1>
 
+<div class="l-container bg-primary">
+  <h1>Alle berichten</h1>
+</div>
 
 <% @posts.in_groups_of(4, false) do |group| %>
   <div class="grid-container">
@@ -16,4 +18,6 @@
   </div>
 <% end %>
 
-
+<div class="post-pagination">
+  <%= paginate @posts, :window => 2 %>
+</div>

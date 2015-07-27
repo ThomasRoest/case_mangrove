@@ -10,7 +10,12 @@ class PostTest < ActiveSupport::TestCase
     assert @post.valid?
   end
   
-  test "should have a tile" do 
+  test "title should be present" do 
+    @post.title = " "
+    assert_not @post.valid?
+  end
+
+  test "body should be present" do 
     @post.title = " "
     assert_not @post.valid?
   end
