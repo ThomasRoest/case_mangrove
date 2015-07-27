@@ -1,0 +1,13 @@
+$primary-blue: #0098b3;
+$primary-black: #161e1f;
+
+
+
+.bg-primary {
+  background-color: $primary-blue;
+}
+
+.bg-black {
+  background-color: $primary-black;
+  color: #fff;
+}

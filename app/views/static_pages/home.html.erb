@@ -1,2 +1,39 @@
-<h1>Case Mangrove deploy test</h1>
-<p>hello</p>
+<div class="bg-primary">
+  <div class="l-container l-pageheader-home text-center">
+    <p>hello Mangrove</p>
+    <h1>Lorem ipsum dolor sit amet, consectetur</h1>
+    <p class="text-pointer">V</p>
+  </div>
+</div>
+
+
+
+
+  <div class="l-container l-paragraph-home text-center">
+    <p>Donec nulla nunc, convallis vitae vestibulum vitae, condimentum sit amet ipsum. Phasellus id semper ipsum. Pellentesque convallis justo felis, vel auctor nisl pretium a. Suspendisse volutpat, turpis in lobortis vehicula, risus ante cursus arcu, sit amet tincidunt purus sapien quis tortor. Proin lectus</p>
+  </div>
+
+
+  <div class="l-container l-paragraph-home bg-black">
+      <h2>Pellentesque convallis justo felis</h2>
+    <p class="text-center">Donec nulla nunc, convallis vitae vestibulum vitae, condimentum sit amet ipsum. Phasellus id semper ipsum. Pellentesque convallis justo felis, vel auctor nisl pretium a. Suspendisse volutpat, turpis in lobortis vehicula, risus ante cursus arcu, sit amet tincidunt purus sapien quis tortor. Proin lectus</p>
+  </div>
+
+
+  <div class="grid-container l-articles-home">
+  <% @posts.each do |post| %>
+    <div class="grid-4 grid-4-l card">
+      <div class="card-header">
+        
+      </div>
+      <div class='card-body'>
+        <h3><%= link_to post.title %></h3>
+        <%= truncate(post.body, length: 125) %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+
+
+
+

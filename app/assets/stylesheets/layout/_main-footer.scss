@@ -1,0 +1,17 @@
+.site-footer, .page-wrapper:after {
+  height: 150px;
+}
+.site-footer {
+  background-color: #d7d7d7;
+  border: 1px solid #a7a7a7;
+}
+
+.ul-site-footer {
+  padding: 0;
+  border: 1px solid #a7a7a7;
+  text-align: center;
+  li {
+    display: inline;
+    color: #fff;
+  }
+}

@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="robots" content="index,follow"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
   <title>CaseMangrove</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="page-wrapper">
+    <%= render "layouts/header" %>
+    <%= render "layouts/flash" %>
 
-<%= yield %>
+    <%= yield %>
+  </div>
+
+  <%#= debug(params) if Rails.env.development? %>
+  <%= render "layouts/footer" %>
 
 </body>
 </html>

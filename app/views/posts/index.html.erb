@@ -1,3 +1,13 @@
-<% @posts.each do |post| %>
-  <%= post %>
+<div>
+  <div class="l-container">
+    <% @posts.each do |post| %>
+    <ul>
+      <li><%= post.title %></li>
+      <li><%= post.body %></li>
+    </ul>
+  
+  
 <% end %>
+  </div>
+</div>
+
