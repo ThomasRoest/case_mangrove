@@ -27,12 +27,18 @@
         <p>Card header</p>
       </div>
       <div class='card-body'>
-        <h3><%= link_to post.title %></h3>
+        <h3><%= link_to post.title, post_path(post) %></h3>
         <%= truncate(post.body, length: 125) %>
       </div>
     </div>
   <% end %>
   </div>
+
+  <div class="text-center">
+    <h3><%= link_to "Meer Artikelen", posts_path %></h3>
+  </div>
+
+  
 
 
 
