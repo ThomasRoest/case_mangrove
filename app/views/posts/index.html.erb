@@ -1,7 +1,9 @@
-
-<div class="l-container bg-primary">
-  <h1>Alle berichten</h1>
+<div class="bg-primary">
+  <div class="l-container">
+    <h1>Alle berichten</h1>
+  </div>
 </div>
+
 
 <% @posts.in_groups_of(4, false) do |group| %>
   <div class="grid-container">

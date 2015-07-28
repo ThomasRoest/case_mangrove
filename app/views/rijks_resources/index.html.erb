@@ -1,0 +1,43 @@
+<div class='bg-primary'>
+  <div class='l-container'>
+    <h1>Rijksmuseum api</h1>
+    <h2>Zoek in de collectie</h2>
+  </div>
+</div>
+
+<div class="l-container">
+  <%= form_tag(rijks_resources_index_path) do %>
+    <%= label_tag('Search the database') %>
+    <%= search_field_tag(:search) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+
+<%= link_to 'Top stukken', rijks_resources_index_path(top_pieces: true) %>
+  <ul>  
+    <% @art_objects_search.each do |object| %>
+      <li><strong><%= link_to object["title"], object["links"]["web"] %></strong></li>
+      <li><%= object["principalOrFirstMaker"] %></li>
+      <% unless object["webImage"].blank? %>
+        <%=link_to (image_tag(object["webImage"]["url"], class: "img-rijks")), object["links"]["web"] %>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+
+
+
+<!-- 
+
+<%#= link_to "Top pieces", rijks_resources_index_path(top_pieces: true) %>
+
+<%#= @art_resources %>
+<%#= @art_resources.class %>
+<%# @art_objects_search.each do |object| %>
+  <%# object.each do |obj| %>
+  <ul>
+    <li><%#= obj %></li>
+    </ul>
+    <%# end %>
+  <%# end %>
+   -->

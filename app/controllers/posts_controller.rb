@@ -7,21 +7,21 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def new
-    @post = Post.new
-  end
-
-  # def create
-  #   @post = Post.create(post_params)
+  # def new
+  #   @post = Post.new
   # end
 
-  def edit
-  end
+  # # def create
+  # #   @post = Post.create(post_params)
+  # # end
 
-  def update
-  end
+  # def edit
+  # end
 
-  def destroy
-  end
+  # def update
+  # end
+
+  # def destroy
+  # end
 end
 

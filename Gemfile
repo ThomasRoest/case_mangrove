@@ -16,6 +16,8 @@ gem 'activeadmin', github: 'activeadmin'
 
 gem 'figaro'
 gem 'kaminari'
+gem 'httparty'
+gem 'http_logger'
 
 gem 'capistrano', '~> 3.3.5'
 gem 'capistrano-rails', '~> 1.1.2'

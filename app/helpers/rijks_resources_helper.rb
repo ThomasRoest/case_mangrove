@@ -1,0 +1,2 @@
+module RijksResourcesHelper
+end
