@@ -4,6 +4,13 @@
   </div>
 </div>
 
+<div>
+  <% @post_categories.each do |c| %>
+    <%= link_to c.name, posts_path(category: c.name) %>
+  <% end %>
+
+</div>
+
 
 <% @posts.in_groups_of(4, false) do |group| %>
   <div class="grid-container">

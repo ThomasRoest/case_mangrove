@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @post_categories = PostCategory.all
     @posts = Post.all.page(params[:page])
   end
 
