@@ -6,13 +6,16 @@
 </div>
 
 <div class="l-container">
+  <h2>
+  <%= link_to 'Top stukken', rijks_resources_index_path(top_pieces: true), class: 'btn btn-primary' %>
+  </h2>
+
   <%= form_tag(rijks_resources_index_path) do %>
     <%= label_tag('Search the database') %>
     <%= search_field_tag(:search) %>
     <%= submit_tag("Search") %>
   <% end %>
 
-<%= link_to 'Top stukken', rijks_resources_index_path(top_pieces: true) %>
   <ul>  
     <% @art_objects_search.each do |object| %>
       <li><strong><%= link_to object["title"], object["links"]["web"] %></strong></li>
