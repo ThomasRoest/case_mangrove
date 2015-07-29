@@ -5,7 +5,6 @@
   </div>
 </div>
 
-
 <div class="l-container text-center">
   <ul class="ul-btn-grouped">
     <li><%= link_to 'Top stukken', rijksmuseum_path(top_pieces: true) %></li>
@@ -25,10 +24,8 @@
   <% end %>
 </div>
 
-
 <% @art_objects_search.in_groups_of(3, false) do |group| %>
   <div class="grid-container">
-
     <% group.each do |object| %>
       <div class='grid-4 l-grid-4 card card-rijksmuseum-index'>
         <div class='card-header'>
