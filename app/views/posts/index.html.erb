@@ -21,7 +21,7 @@
           <p><%= post.post_category.name %></p>
         </div>
         <div class="card-body">
-          <%= truncate(post.body, length: 125) %><%= link_to "Lees meer", post_path(post) %>
+          <p><%= truncate(post.body, length: 125) %><%= link_to "Lees meer", post_path(post) %></p>
         </div>
       </div>
     <% end %>

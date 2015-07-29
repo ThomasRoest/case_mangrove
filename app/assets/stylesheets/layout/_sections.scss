@@ -1,15 +1,18 @@
 .l-pageheader-home {
   color: #fff;
-  padding: 4em;
+  padding: 4em 4em 2em 4em;
   h1 {
     text-transform: uppercase;
+  }
+  h2 {
+    font-weight: 400;
   }
 }
 
 .l-paragraph-home {
-  padding: 2em;
+  padding: 1em;
   .ul-btn-grouped {
-    margin-bottom: 4em;
+    margin: 4em 0 4em 0;
   }
 }
 
@@ -20,10 +23,10 @@
 
 @media screen and (min-width: 768px){
   .l-pageheader-home {
-    padding: 7em;
+    padding: 7em 7em 3em 7em;
   }
   .l-paragraph-home {
-    padding: 4em;
+    padding: 3em;
   }
   .l-articles-home {
     margin-top: 3em;

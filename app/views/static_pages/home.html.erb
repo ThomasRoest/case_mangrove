@@ -1,21 +1,20 @@
 <div class="bg-primary">
   <div class="l-container l-pageheader-home text-center">
-    <p>hello Mangrove</p>
+    <h2>justo felis, vel auctor nisl</h2>
     <h1>Lorem ipsum dolor sit amet, consectetur</h1>
     <p class="text-pointer">V</p>
   </div>
 </div>
 
   <div class="l-container l-paragraph-home text-center">
+    <p>Donec nulla nunc, convallis vitae vestibulum vitae, condimentum sit amet ipsum. Phasellus id semper ipsum. Pellentesque convallis justo felis, vel auctor nisl pretium a. Suspendisse volutpat, turpis in lobortis vehicula, risus ante cursus arcu, sit amet tincidunt purus sapien quis tortor. Proin lectus</p>
     <ul class="ul-btn-grouped">
       <li><%= link_to "Artikelen", posts_path %></li>
       <li><%= link_to "Rijksmuseum", rijksmuseum_path %></li>
       <li><%= link_to "Link", root_path %></li>
       <li><%= link_to "Link", root_path %></li>
     </ul>
-    <p>Donec nulla nunc, convallis vitae vestibulum vitae, condimentum sit amet ipsum. Phasellus id semper ipsum. Pellentesque convallis justo felis, vel auctor nisl pretium a. Suspendisse volutpat, turpis in lobortis vehicula, risus ante cursus arcu, sit amet tincidunt purus sapien quis tortor. Proin lectus</p>
   </div>
-
 
   <div class="l-container l-paragraph-home bg-black">
       <h2>Pellentesque convallis justo felis</h2>
@@ -31,7 +30,7 @@
       </div>
       <div class='card-body'>
         <h3><%= link_to post.title, post_path(post) %></h3>
-        <%= truncate(post.body, length: 125) %>
+        <p><%= truncate(post.body, length: 150) %></p>
       </div>
     </div>
   <% end %>
