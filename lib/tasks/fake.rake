@@ -3,7 +3,7 @@ task :fake => :environment do
   title = Faker::Lorem.sentence
   body = Faker::Lorem.paragraph(10, true, 5)
   # course_category_id = rand(1..3)
-  # course_region_id = rand(1..4)
+  post_category_id = rand(1..4)
   # company = Faker::Company.name
   # email = Faker::Internet.email
   # zipcode = Faker::Address.zip_code
@@ -14,6 +14,8 @@ task :fake => :environment do
 
   Post.create!(
     title: title,
-    body: body)
+    body: body,
+    published: true,
+    post_category_id: post_category_id)
   end
 end

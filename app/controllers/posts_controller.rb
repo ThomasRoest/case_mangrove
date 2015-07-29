@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   def index
     @post_categories = PostCategory.all
-    @posts = Post.all.page(params[:page])
+    @posts = Post.published.page(params[:page])
+    @posts = Post.post_category(params[:post_category]).published.page(params[:page]) if params[:post_category].present?
   end
 
   def show
