@@ -11,8 +11,8 @@
     <li><%= link_to 'Vermeer', rijksmuseum_path(artist: 'vermeer') %></li>
     <li><%= link_to 'Van Gogh', rijksmuseum_path(artist: 'van gogh') %></li>
     <li><%= link_to 'Rembrand', rijksmuseum_path(artist: 'rembrand') %></li>
-    <li><%= link_to 'Steen', rijksmuseum_path(artist: 'jan steen') %></li>
-    <li><%= link_to 'Hals', rijksmuseum_path(artist: 'frans hals') %></li>
+    <li><%= link_to 'Jan Steen', rijksmuseum_path(artist: 'jan steen') %></li>
+    <li><%= link_to 'Frans Hals', rijksmuseum_path(artist: 'frans hals') %></li>
   </ul>
 </div>
 
@@ -34,7 +34,7 @@
           <% end %>
         </div>
         <div class="card-body">
-          <%= link_to object["title"], object["links"]["web"] %>
+          <%= link_to object["longTitle"], object["links"]["web"] %>
           <p><%= object["principalOrFirstMaker"] %></p>
         </div>
       </div>
