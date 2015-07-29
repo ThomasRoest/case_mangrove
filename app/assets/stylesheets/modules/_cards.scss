@@ -1,17 +1,73 @@
 // .card {}
 
-.card-header {
-  background-color: #e7e7e7;
-  span {
-    color: #a7a7a7;
-    font-size: 0.7em;
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  .card-header,
+  .card-body {
+    a:hover,
+    a:focus,
+    a:active {
+      color: aqua;
+    }
   }
 }
 
-.card-body {
-  padding: 0 1em 1em 1em;
-  a {
-    color: #333;
-    text-decoration: none;
+
+.card-home {
+  .card-header {
+    background-color: #fafafa;
+    p {
+      margin: 0;
+      padding: 3em 1em 3em 1em;
+    }
+  }
+  .card-body {
+    padding: 0 1em 1em 1em;
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+  }
+}
+
+.card-post-index {
+  margin-top: 1em;
+  .card-header {
+    background-color: #a7a7a7;
+    padding: 1em;
+    a {
+      text-decoration: none;
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+  .card-body {
+    padding: 1em;
+  }
+}
+
+.card-rijksmuseum-index {
+   margin-top: 1em;
+  .card-header {
+    background-color: #a7a7a7;
+    padding: 1em;
+  }
+  .card-body {
+    padding: 1em;
+    a {
+      color: $primary-blue;
+      &:hover {
+        color: aqua;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px){
+  .card-post-index,
+  .card-rijksmuseum-index {
+    margin-top: 0;
   }
 }

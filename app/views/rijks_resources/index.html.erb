@@ -1,46 +1,62 @@
 <div class='bg-primary'>
   <div class='l-container'>
-    <h1>Rijksmuseum api</h1>
+    <h1>Rijksmuseum</h1>
     <h2>Zoek in de collectie</h2>
   </div>
 </div>
 
-<div class="l-container">
-  <h2>
-  <%= link_to 'Top stukken', rijks_resources_index_path(top_pieces: true), class: 'btn btn-primary' %>
-  </h2>
 
-  <%= form_tag(rijks_resources_index_path) do %>
-    <%= label_tag('Search the database') %>
-    <%= search_field_tag(:search) %>
-    <%= submit_tag("Search") %>
-  <% end %>
-
-  <ul>  
-    <% @art_objects_search.each do |object| %>
-      <li><strong><%= link_to object["title"], object["links"]["web"] %></strong></li>
-      <li><%= object["principalOrFirstMaker"] %></li>
-      <% unless object["webImage"].blank? %>
-        <%=link_to (image_tag(object["webImage"]["url"], class: "img-rijks")), object["links"]["web"] %>
-      <% end %>
-    <% end %>
+<div class="l-container text-center">
+  <ul class="ul-btn-grouped">
+    <li><%= link_to 'Top stukken', rijksmuseum_path(top_pieces: true) %></li>
+    <li><%= link_to 'Vermeer', rijksmuseum_path(artist: 'vermeer') %></li>
+    <li><%= link_to 'Van Gogh', rijksmuseum_path(artist: 'van gogh') %></li>
+  </ul>
+  <ul class="ul-btn-grouped">
+    <li><%= link_to 'Rembrand', rijksmuseum_path(artist: 'rembrand') %></li>
+    <li><%= link_to 'Steen', rijksmuseum_path(artist: 'jan steen') %></li>
+    <li><%= link_to 'Hals', rijksmuseum_path(artist: 'frans hals') %></li>
   </ul>
 </div>
 
+<div class="l-container">
+  <%= form_tag(rijksmuseum_path) do %>
+    <%= label_tag('Zoek in de collectie') %>
+    <%= search_field_tag(:search) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
+
+
+<% @art_objects_search.in_groups_of(3, false) do |group| %>
+  <div class="grid-container">
+
+    <% group.each do |object| %>
+      <div class='grid-4 l-grid-4 card card-rijksmuseum-index'>
+        <div class='card-header'>
+          <% unless object["webImage"].blank? %>
+            <%=link_to (image_tag(object["webImage"]["url"], class: "img-rijks")), object["links"]["web"] %>
+          <% end %>
+        </div>
+        <div class="card-body">
+          <%= link_to object["title"], object["links"]["web"] %>
+          <p><%= object["principalOrFirstMaker"] %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
 
 
-<!-- 
 
-<%#= link_to "Top pieces", rijks_resources_index_path(top_pieces: true) %>
 
-<%#= @art_resources %>
-<%#= @art_resources.class %>
-<%# @art_objects_search.each do |object| %>
-  <%# object.each do |obj| %>
-  <ul>
-    <li><%#= obj %></li>
-    </ul>
-    <%# end %>
-  <%# end %>
-   -->
+
+
+
+  
+
+
+
+
+

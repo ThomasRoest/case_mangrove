@@ -1,0 +1,29 @@
+.ul-btn-grouped {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  // border: 1px solid #ccc;
+  border-radius: 3px;
+  display: inline-block;
+  // padding: 1em;
+  margin: 20px;
+  li {
+    padding: 1em;
+    display: inline;
+    margin: 0;
+    background-color: #fafafa;
+    transition: .3s;
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $primary-blue;
+      a {
+        color: #fff;
+      }
+    }
+  }
+}

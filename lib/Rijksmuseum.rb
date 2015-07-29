@@ -12,6 +12,10 @@ module Rijksmuseum
   end
 
   def self.top_pieces
-    get("/collection?key=#{ENV['rijks_api_key']}&toppieces=true&ps=40&format=json").parsed_response['artObjects']
+    get("/collection?key=#{ENV['rijks_api_key']}&toppieces=true&ps=20&format=json").parsed_response['artObjects']
+  end
+
+  def self.find_artist(name)
+    get("/collection?q=#{name}&key=#{ENV['rijks_api_key']}&format=json").parsed_response['artObjects']
   end
 end

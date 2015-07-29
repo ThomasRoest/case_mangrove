@@ -4,21 +4,21 @@
   </div>
 </div>
 
-<div>
-  <% @post_categories.each do |c| %>
-    <%= link_to c.name, posts_path(post_category: c.name) %>
-  <% end %>
-
+<div class="l-container text-center">
+  <ul class="ul-btn-grouped">
+    <% @post_categories.each do |c| %>
+      <li><%= link_to c.name, posts_path(post_category: c.name) %></li>
+    <% end %>
+  </ul>
 </div>
-
 
 <% @posts.in_groups_of(4, false) do |group| %>
   <div class="grid-container">
     <% group.each do |post| %>
-      <div class="grid-3 l-grid-3 card">
+      <div class="grid-3 l-grid-3 card card-post-index">
         <div class="card-header">
           <%= link_to post.title, post_path(post) %><br>
-          <span><%= post.post_category.name %></span>
+          <p><%= post.post_category.name %></p>
         </div>
         <div class="card-body">
           <%= truncate(post.body, length: 125) %><%= link_to "Lees meer", post_path(post) %>
