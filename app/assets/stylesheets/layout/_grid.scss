@@ -22,20 +22,10 @@ img {
   border-radius: 3px;
 }
 
-
-
-/* Media Queries
-================================ */
-
-@media (min-width: 1px) and (max-width: 767px)  {
-  .grid-container > [class^="grid-"] {
-    // padding-top: 5px;
-    // padding-bottom: 5px;
-  }
-  .hide-mobile {
+.hide-mobile {
     display: none;
   }
-}
+
 
 @media (min-width: 768px) {
 

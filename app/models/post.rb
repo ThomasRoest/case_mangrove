@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
 
   validates :title, presence: true
   validates :body, presence: true
-  # validates :post_category_id, presence: true
+  validates :post_category_id, presence: true
 
   paginates_per 24
 
