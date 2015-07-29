@@ -3,7 +3,8 @@ require 'test_helper'
 class ViewPostsTest < ActionDispatch::IntegrationTest
 
   def setup
-    @post = Post.create(id: 1, title: "test title", body: "test body")
+    @category = PostCategory.create(id: 1, name: "Actueel")
+    @post = Post.create(id: 1, title: "test title", body: "test body", post_category_id: @category.id)
   end
 
   test "view posts" do 
