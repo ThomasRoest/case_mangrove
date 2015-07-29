@@ -11,5 +11,6 @@ class Post < ActiveRecord::Base
   default_scope -> { order('created_at DESC') }
 
   scope :published, -> { where('published = ?', true) }
+  scope :not_published, -> { where('published = ?', false) }
   scope :post_category, -> (post_category) { PostCategory.find_by(name: post_category).posts }
 end

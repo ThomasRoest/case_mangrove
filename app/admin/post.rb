@@ -1,17 +1,19 @@
 ActiveAdmin.register Post do
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
 permit_params :title, :body, :published, :post_category_id
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
 
+scope :published
+scope :not_published
 
+  index do 
+    column :id 
+      column "Categorie" do |post|
+      post.post_category.name
+    end
+    column "Titel" do |post|
+      link_to post.title, admin_post_path(post)
+    end
+    column 'geplaatst op', :created_at
+    column :published
+  end
 end
